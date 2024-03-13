@@ -44,12 +44,12 @@ val_stream = load_dataset("wikitext", "wikitext-103-v1", split='validation', str
  
 # Process the dataset
 train_path="train.txt"
-train = process_dataset(train_stream, "new_train.txt", dataset_len, seq_len,
+train = process_dataset(train_stream, "data/new_train.txt", dataset_len, seq_len,
                           trained_tokenizer_path="bytelevel_bpe",  
                           truncation=True, padding=True,
                           tokenizer_params={})
 
-val = process_dataset(val_stream, "new_val.txt", dataset_len, seq_len,
+val = process_dataset(val_stream, "data/new_val.txt", dataset_len, seq_len,
                       trained_tokenizer_path="bytelevel_bpe",  
                       truncation=True, padding=True, 
                       tokenizer_params={})

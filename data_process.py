@@ -10,12 +10,11 @@ from tokenizers import ByteLevelBPETokenizer
 
 def contains_non_latin1_characters(s):
     try:
-        # If this operation fails, it means there was a problem encoding the string to UTF-8,
-        # which should not happen with properly formed Unicode strings in Python.
+        # Only accept latin-1 characters
         s.encode('latin-1')
     except UnicodeEncodeError:
         return True
-    # No exception means all characters can be encoded in UTF-8.
+
     return False
 
 
